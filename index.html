@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emagrecimento Emocional - Vença a Ansiedade e Pare de Comer Por Impulso</title>
+    <style>
+        /* Cores emocionais: tons de azul-esverdeado (calma/equilíbrio), 
+           laranja (transformação/energia) e roxo suave (introspecção) */
+        :root {
+            --primary-color: #2a9d8f; /* Verde-azulado - calma/equilíbrio */
+            --secondary-color: #e76f51; /* Laranja - energia/transformação */
+            --accent-color: #8a5cf5; /* Roxo suave - introspecção */
+            --dark-color: #264653; /* Azul escuro - profundidade */
+            --light-color: #f8f9fa; /* Branco suave */
+            --highlight-color: #ffcb77; /* Amarelo suave - esperança */
+            --text-color: #333333;
+            --light-text: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: var(--light-text);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(42, 157, 143, 0.8));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--highlight-color);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: #e05d3d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Pain Points Section */
+        .pain-points {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pain-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pain-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .pain-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .solution-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .solution-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
+        }
+        
+        .solution-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .solution-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .check-list {
+            margin: 30px 0;
+            list-style: none;
+        }
+        
+        .check-list li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 18px;
+        }
+        
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+        /* Bonus Section */
+        .bonus {
+            padding: 80px 0;
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        .bonus-title {
+            color: var(--highlight-color);
+            margin-bottom: 30px;
+        }
+        
+        .bonus-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bonus-value {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        .bonus-value span {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--highlight-color);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .price-tag {
+            font-size: 72px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .price-tag small {
+            font-size: 30px;
+            vertical-align: top;
+        }
+        
+        .original-price {
+            font-size: 30px;
+            color: #777;
+            text-decoration: line-through;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .guarantee {
+            margin: 40px auto;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guarantee h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .solution-content {
+                flex-direction: column;
+            }
+            
+            .solution-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .price-tag {
+                font-size: 60px;
+            }
+        }
+        
+        /* Animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            margin: 0 10px;
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 36px;
+            font-weight: bold;
+            background-color: var(--dark-color);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown-label {
+            font-size: 14px;
+            color: var(--dark-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Emagrecimento Emocional</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DESCUBRA COMO VENCER A ANSIEDADE E PARAR DE COMER POR IMPULSO</h1>
+            <p class="subtitle">O método simples e prático que já ajudou centenas de mulheres a quebrar o ciclo da compulsão alimentar sem dietas restritivas</p>
+            <a href="#pricing" class="cta-button pulse">QUERO TRANSFORMAR MINHA RELAÇÃO COM A COMIDA</a>
+        </div>
+    </section>
+
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">Você se identifica com alguma dessas situações?</h2>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">😔</div>
+                    <h3>Culpa e Vergonha</h3>
+                    <p>Você se sente culpada depois de comer demais, prometendo que "amanhã vai ser diferente", mas o ciclo sempre se repete?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">😰</div>
+                    <h3>Ansiedade Incontrolável</h3>
+                    <p>Quando a ansiedade bate, a primeira coisa que você faz é abrir a geladeira, mesmo sabendo que não está com fome física?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">😩</div>
+                    <h3>Dietas que Falham</h3>
+                    <p>Já tentou várias dietas, mas sempre volta aos mesmos hábitos porque nenhuma delas trata o verdadeiro problema?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">🌙</div>
+                    <h3>Compulsão Noturna</h3>
+                    <p>À noite, quando está sozinha com seus pensamentos, você se pega comendo sem controle para aliviar suas emoções?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">👗</div>
+                    <h3>Roupas que Não Servem</h3>
+                    <p>Tem um guarda-roupa cheio de roupas que não servem mais, esperando o dia em que você finalmente vai "se controlar"?</p>
+                </div>
+                
+                <div class="pain-card">
+                    <div class="pain-icon">🔄</div>
+                    <h3>Ciclo Sem Fim</h3>
+                    <p>Sente que está presa em um ciclo interminável de restrição, compulsão, culpa e mais restrição, sem conseguir escapar?</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 24px; font-weight: bold; margin-bottom: 20px; color: var(--secondary-color);">Se você respondeu SIM para qualquer uma dessas perguntas...</p>
+                <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">Saiba que você NÃO está sozinha e que existe uma solução que vai muito além das dietas convencionais.</p>
+                <a href="#pricing" class="cta-button">QUERO CONHECER A SOLUÇÃO</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">A Solução que Você Procura</h2>
+            
+            <div class="solution-content">
+                <div class="solution-text">
+                    <p style="font-size: 20px; margin-bottom: 20px;">O ebook <strong>"Emagrecimento Emocional: Como Vencer a Ansiedade e Parar de Comer Por Impulso"</strong> foi criado especialmente para mulheres que estão cansadas de dietas que não funcionam porque não tratam a raiz do problema: a conexão entre emoções e alimentação.</p>
+                    
+                    <p style="font-size: 18px; margin-bottom: 30px;">Diferente de outros materiais complicados e cheios de termos técnicos, este guia é <strong>SIMPLES, OBJETIVO e PRÁTICO</strong> — desenvolvido para mulheres reais, com vidas ocupadas e desafios diários.</p>
+                    
+                    <ul class="check-list">
+                        <li>Descubra como identificar os gatilhos emocionais que te levam a comer por impulso</li>
+                        <li>Aprenda técnicas comprovadas para acalmar a ansiedade sem recorrer à comida</li>
+                        <li>Entenda a diferença entre fome física e fome emocional</li>
+                        <li>Desenvolva estratégias práticas para interromper um episódio de compulsão antes que ele comece</li>
+                        <li>Construa uma relação saudável com a comida e seu corpo</li>
+                    </ul>
+                    
+                    <p style="font-size: 18px; font-style: italic; color: var(--dark-color);">"Este não é apenas mais um ebook sobre emagrecimento. É um guia transformador que aborda a raiz do problema: a conexão entre ansiedade e alimentação."</p>
+                </div>
+                
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mulher feliz e em paz com a alimentação">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bonus" id="bonus">
+        <div class="container">
+            <h2 class="bonus-title">BÔNUS EXCLUSIVO</h2>
+            
+            <div class="bonus-box">
+                <h3 style="font-size: 28px; margin-bottom: 20px;">AVALIAÇÃO CORPORAL COMPLETA</h3>
+                <p style="font-size: 18px; margin-bottom: 20px;">Ao adquirir o ebook hoje, você receberá GRATUITAMENTE uma avaliação corporal completa (presencial ou online) para acompanhar sua transformação!</p>
+                
+                <div class="bonus-value">
+                    Valor do bônus: <span>R$150,00</span>
+                </div>
+                
+                <p style="font-size: 18px;">Esta avaliação profissional vai te ajudar a:</p>
+                <ul class="check-list" style="color: white; text-align: left; max-width: 500px; margin: 20px auto;">
+                    <li>Entender seu atual estado físico</li>
+                    <li>Estabelecer metas realistas</li>
+                    <li>Acompanhar seu progresso de forma objetiva</li>
+                    <li>Ajustar suas estratégias para resultados melhores</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Invista em Sua Transformação</h2>
+            
+            <span class="original-price">De R$27,00</span>
+            <div class="price-tag"><small>R$</small>7,99</div>
+            <p style="font-size: 18px; margin-bottom: 30px;">Pagamento único - Acesso imediato</p>
+            
+            <p style="font-size: 20px; max-width: 700px; margin: 0 auto 30px;">Por menos que o preço de uma refeição fora de casa, você terá acesso a um método completo que pode transformar sua relação com a comida para sempre.</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number">02</div>
+                    <div class="countdown-label">Dias</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">11</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">45</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">19</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+            
+            <p style="font-size: 16px; color: var(--secondary-color); margin-bottom: 30px;">Oferta por tempo limitado! Preço volta ao normal em breve.</p>
+            
+            <a href="#" class="cta-button pulse" style="font-size: 24px; padding: 20px 40px;">QUERO TRANSFORMAR MINHA VIDA AGORA</a>
+            
+            <div class="guarantee">
+                <h3>GARANTIA INCONDICIONAL DE 7 DIAS</h3>
+                <p>Se em até 7 dias você não estiver completamente satisfeita ou não perceber os primeiros resultados, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo vou levar para ver resultados?</div>
+                <p>Muitas leitoras relatam mudanças na sua relação com a comida já nos primeiros dias, ao aplicar as técnicas de controle da ansiedade. Para resultados mais significativos na balança, o processo é individual, mas com a aplicação consistente das estratégias, você pode começar a ver mudanças em 2-3 semanas.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso fazer dieta enquanto aplico as técnicas do ebook?</div>
+                <p>Não! Na verdade, o objetivo do ebook é justamente te libertar do ciclo de dietas restritivas. Você aprenderá a ouvir seu corpo, identificar a fome real e desenvolver uma relação saudável com a comida, sem regras rígidas ou proibições.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como funciona o bônus da avaliação corporal?</div>
+                <p>Após a compra, você receberá instruções por email para agendar sua avaliação corporal, que pode ser realizada presencialmente ou online, de acordo com sua preferência e localização.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">O ebook é adequado para quem tem diagnóstico de ansiedade?</div>
+                <p>Sim! O ebook oferece técnicas complementares que podem ajudar no manejo da ansiedade, especialmente quando relacionada à alimentação. No entanto, ele não substitui tratamentos médicos ou psicológicos. Se você está em tratamento, as estratégias do ebook podem ser um excelente complemento.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como recebo o ebook após a compra?</div>
+                <p>Imediatamente após a confirmação do pagamento, você receberá um email com o link para download do ebook em formato PDF, que pode ser lido em qualquer dispositivo (computador, tablet ou celular).</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Está na Hora de Transformar sua Relação com a Comida</h2>
+            <p>Imagine como seria acordar todos os dias sem o peso da culpa, sem a luta constante contra a comida, e finalmente em paz com seu corpo e suas emoções.</p>
+            <a href="#pricing" class="cta-button pulse">QUERO COMEÇAR MINHA TRANSFORMAÇÃO AGORA</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Emagrecimento Emocional - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const day = now.getDate();
+            const hours = 23 - now.getHours();
+            const minutes = 59 - now.getMinutes();
+            const seconds = 59 - now.getSeconds();
+            
+            document.querySelectorAll('.countdown-item')[0].querySelector('.countdown-number').textContent = String(2).padStart(2, '0');
+            document.querySelectorAll('.countdown-item')[1].querySelector('.countdown-number').textContent = String(hours).padStart(2, '0');
+            document.querySelectorAll('.countdown-item')[2].querySelector('.countdown-number').textContent = String(minutes).padStart(2, '0');
+            document.querySelectorAll('.countdown-item')[3].querySelector('.countdown-number').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
